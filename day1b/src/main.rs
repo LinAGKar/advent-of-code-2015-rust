@@ -1,9 +1,8 @@
 use std::io;
-use std::io::Read;
 
 fn main() {
     let mut input = String::new();
-    io::stdin().read_to_string(&mut input).unwrap();
+    io::stdin().read_line(&mut input).unwrap();
     println!("{}", input.chars().enumerate().try_fold(0, |acc, (n, x)| match x {
         '(' => Ok(acc + 1),
         ')' => if acc > 0 { Ok(acc - 1) } else { Err(n + 1) },
