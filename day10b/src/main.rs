@@ -4,10 +4,6 @@ fn main() {
     let mut input = Vec::new();
     std::io::stdin().read_to_end(&mut input).unwrap();
 
-    while !input.last().unwrap().is_ascii_digit() {
-        input.truncate(input.len() - 1);
-    }
-
     for _ in 0..50 {
         let (_, _, new_seq) = input
             .into_iter()
